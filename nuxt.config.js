@@ -1,7 +1,20 @@
+const path = require('path')
+const generate_meta = require('./meta.js')
+
+const meta = {
+  title: 'nuxt-blog',
+  description: 'Your daily chunk of code content',
+  color: '#42b883',
+  url: 'https://yuu27q.github.io',
+  // image: 'https://yuu27q.github.io/full_logo.png',
+}
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  // Transitions
+  layoutTransition: 'layout',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-app',
@@ -10,12 +23,13 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
+      // ...generate_meta(meta),
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/tailwind.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -53,8 +67,40 @@ export default {
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
-
+  content: {
+    liveEdit: true,
+    markdown: {
+      remarkExternalLinks: {
+        target: '_blank',
+        rel: 'nofollow noopener noreferrer',
+      },
+      prism: {
+        theme: 'prism-themes/themes/prism-dracula.css',
+      },
+    },
+  },
+  // Nuxt Images
+  image: {
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536,
+    },
+    presets: {
+      preview: {
+        modifiers: {
+          fit: 'cover',
+          format: 'jpg',
+          width: 400,
+          height: 300,
+        },
+      },
+    },
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }

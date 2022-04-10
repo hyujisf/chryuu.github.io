@@ -1,8 +1,8 @@
 ---
-title: Getting started
-description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
-createdAt: Monday, September 27 2021, 3:00 PM
-image: second-post.jpg
+title: My third blog post
+description: The legendary start of my blog! Here begins the epic quest to write at least weekly!
+createdAt: Monday, September 27 2021, 3:05 PM
+image: third-post.jpg
 tags:
   - Front-end
   - Programming
@@ -22,3 +22,17 @@ Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetc
 ## Displaying content
 
 Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
+
+### Base on writing Content
+
+```vue
+<template>
+  <div>
+    <h1>{{ $content('title') }}</h1>
+    <p>{{ $content('description') }}</p>
+    <img src="{{ $content('image') }}" />
+    <p>{{ $content('createdAt') }}</p>
+    <p>{{ $content('tags') }}</p>
+  </div>
+</template>
+```

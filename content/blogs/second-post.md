@@ -1,7 +1,7 @@
 ---
-title: Getting started
-description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
-createdAt: Monday, September 27 2021, 3:00 PM
+title: My second blog post
+description: The legendary start of my blog! Here begins the epic quest to write at least weekly!
+createdAt: Monday, September 27 2021, 3:02 PM
 image: second-post.jpg
 tags:
   - Front-end
