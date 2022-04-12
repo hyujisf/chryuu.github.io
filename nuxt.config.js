@@ -13,6 +13,8 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  publicPath: '/yuu27q.github.io/',
+
   // Transitions
   layoutTransition: 'layout',
   // Global page headers: https://go.nuxtjs.dev/config-head
